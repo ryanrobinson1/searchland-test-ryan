@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "ui";
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CreateUserPage from "./pages/createUser/CreateUserPage";
-import NotFound from "./pages/notFound/NotFound";
-import HomePage from "./pages/home/Home";
+import "./app.css";
+import CreateUserPage from "../createUser/CreateUserPage";
+import NotFound from "../notFound/NotFound";
+import HomePage from "../home/Home";
 
 function App() {
   return (
