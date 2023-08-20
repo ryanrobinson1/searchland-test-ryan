@@ -1,20 +1,12 @@
 import React from "react";
 import { Link } from "ui";
 
-const HomePage = () => {
+const Home = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="header">Ryan Robinson Tech Test</h1>
-        <p>
-          <a href="https://www.linkedin.com/in/ryan-robinson-london-uk/">LinkedIn</a>
-        </p>
-        <p>
-          <a href="https://thesaaspilgrimage.com/">Personal Project</a>
-        </p>
-      </header>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className="text-6xl font-extrabold">Ryan Robinson - Tech Test</h1>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;

@@ -19,6 +19,7 @@
     "eslint-config-custom": "*",
     "react": "^17.0.2",
     "tsconfig": "*",
+    "shared-ts": "*",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"
   }
