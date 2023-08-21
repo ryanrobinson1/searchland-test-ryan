@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs --dts",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsup src/index.ts --format cjs  --dts --watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsup src/index.ts --format cjs --watch --onSuccess \"node dist/index.js\"",
     "lint": "tsc --noEmit && eslint \"src/**/*.ts*\"",
     "start": "node dist/index.js",
     "test": "jest --detectOpenHandles --forceExit"
@@ -19,7 +19,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "mysql2": "^3.6.0",
+    "reflect-metadata": "^0.1.13",
     "shared-ts": "*",
+    "typeorm": "^0.3.17",
     "zod": "^3.22.2"
   },
   "devDependencies": {
