@@ -2,20 +2,25 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
-  "main": "index.js",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs",
+    "build": "tsup src/index.ts --format cjs --dts",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsup src/index.ts --format cjs --watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsup src/index.ts --format cjs  --dts --watch --onSuccess \"node dist/index.js\"",
     "lint": "tsc --noEmit && eslint \"src/**/*.ts*\"",
     "start": "node dist/index.js",
     "test": "jest --detectOpenHandles --forceExit"
   },
   "dependencies": {
+    "@trpc/server": "^10.37.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "shared-ts": "*",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
