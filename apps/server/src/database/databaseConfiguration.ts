@@ -5,7 +5,7 @@ export const database = new DataSource({
   type: "mysql",
   host: "localhost",
   port: 3306,
-  username: "ryan",
+  username: "root",
   password: "password",
   database: "searchland",
   synchronize: true,
