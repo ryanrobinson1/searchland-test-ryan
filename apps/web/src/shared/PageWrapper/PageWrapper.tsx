@@ -22,10 +22,6 @@ export const PageWrapper = ({ children }: PageWrapperProps) => {
             name: "Create User",
             href: "/users/create",
           },
-          {
-            name: "Modify User",
-            href: "/users/1234",
-          },
         ]}
       />
       <div className="bg-neutral-50">

@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button } from "ui";
+import { trpc } from "../../trpc";
+import { useParams } from "react-router-dom";
 
 interface FormInput {
   firstName: string;
   lastName: string;
-  preferences: string;
 }
 
 const CreateUser = () => {
   const { register, handleSubmit } = useForm<FormInput>();
+  const [responseText, setResponseText] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit: SubmitHandler<FormInput> = (data) => console.log("data = ", data);
+  const onSubmit: SubmitHandler<FormInput> = async (data) => {
+    setIsSubmitting(true);
+    const { firstName, lastName } = data;
+
+    await trpc.user.create.mutate({
+      firstName,
+      lastName,
+    });
+
+    setResponseText(`Successfully created a user`);
+
+    setIsSubmitting(false);
+  };
 
   return (
     <div className="h-screen">
@@ -28,16 +43,11 @@ const CreateUser = () => {
           <input {...register("lastName")} className="rounded border-gray-500 border-2 p-1" />
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label className="font-medium text-left">Preferences</label>
-          <select {...register("preferences")} className="rounded border-gray-500 border-2 p-1">
-            <option value="consent">consent</option>
-            <option value="no-consent">no-consent</option>
-          </select>
-        </div>
-
-        <Button type="submit">Create user</Button>
+        <Button disabled={isSubmitting} type="submit">
+          Create user
+        </Button>
       </form>
+      <p className="text-center">{responseText}</p>
     </div>
   );
 };

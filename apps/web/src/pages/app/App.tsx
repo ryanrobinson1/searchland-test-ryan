@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CreateUserPage from "../CreateUser/CreateUser";
 import NotFound from "../NotFound/NotFound";
 import HomePage from "../Home/Home";
-import ModifyUserPage from "../ModifyUser/ModifyUser";
+import ModifyUserPage from "../UpdateUser/UpdateUser";
 import ListUsersPage from "../ListUsers/ListUsers";
 
 const App = () => {
